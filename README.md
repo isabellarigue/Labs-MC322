@@ -1,2 +1,10 @@
-# Labs-MC322
-Laboratórios de programação da disciplina MC322 (Programação Orientada a Objetos) da UNICAMP
+# Apresentação do Aluno
+
+# Aluno
+* Isabella Ribeiro Rigue
+
+#RA
+* 234618
+
+# Curso
+* Engenharia de Computação (34)
