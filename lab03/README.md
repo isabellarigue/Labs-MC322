@@ -8,7 +8,7 @@
 
 ## Classe Animacao
 
-[Resolução da tarefa](lab03/src/pt/c02oo/s02classe/s03lombriga/Animacao.java)
+[Resolução da tarefa](https://github.com/isabellarigue/Labs-MC322/blob/main/lab03/src/pt/c02oo/s02classe/s03lombriga/Animacao.java)
 
 ## Classe AppLombriga
 
