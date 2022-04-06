@@ -19,7 +19,7 @@ public class Animacao {
 			case 'M' : objeto.mover(); break;
 			case 'V' : objeto.virar(); break;
 			default: System.out.println("invalido");
-		    } 
+		} 
 		numPasso += 1;
 	}
 	
