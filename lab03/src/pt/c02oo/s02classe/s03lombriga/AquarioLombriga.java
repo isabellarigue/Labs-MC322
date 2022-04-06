@@ -84,11 +84,11 @@ public class AquarioLombriga {
 				} else
 					apresentaStr1 += "#";
 			}
-	        k = apresentaStr1.length() - 1;
-	        while(k >= 0) { //invertendo o lado da string
-	        	apresentaStr += apresentaStr1.charAt(k);
-	            k--;
-	        }
+			k = apresentaStr1.length() - 1;
+			while(k >= 0) { //invertendo o lado da string
+			    apresentaStr += apresentaStr1.charAt(k);
+			    k--;
+			}
 		}
 		
 		return apresentaStr;
