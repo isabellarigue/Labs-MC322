@@ -14,13 +14,13 @@ public class Animacao {
 	}
 	
 	public void passo(AquarioLombriga objeto) {
-        switch (animacao.charAt(numPasso)) {
-	        case 'C' : objeto.crescer(); break;
-	        case 'M' : objeto.mover(); break;
-	        case 'V' : objeto.virar(); break;
-	        default: System.out.println("invalido");
-	    } 
-        numPasso += 1;
+		switch (animacao.charAt(numPasso)) {
+			case 'C' : objeto.crescer(); break;
+			case 'M' : objeto.mover(); break;
+			case 'V' : objeto.virar(); break;
+			default: System.out.println("invalido");
+		    } 
+		numPasso += 1;
 	}
 	
 }
