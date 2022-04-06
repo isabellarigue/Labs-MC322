@@ -8,9 +8,9 @@ public class AppLombriga {
       String lombrigas[] = tk.recuperaLombrigas();
       
       for (int l = 0; l < lombrigas.length; l++) {
-		  String passosStr = ""; //para gravar a parte da string que representa os passos da lombriga
+	      String passosStr = ""; //para gravar a parte da string que representa os passos da lombriga
 		    
-		  int tamAquario = Character.getNumericValue(lombrigas[l].charAt(0)) * 10 + Character.getNumericValue(lombrigas[l].charAt(1)); 
+	      int tamAquario = Character.getNumericValue(lombrigas[l].charAt(0)) * 10 + Character.getNumericValue(lombrigas[l].charAt(1)); 
 	      int tamLombriga = Character.getNumericValue(lombrigas[l].charAt(2)) * 10 + Character.getNumericValue(lombrigas[l].charAt(3)); 
 	      int pCabeca = Character.getNumericValue(lombrigas[l].charAt(4)) * 10 + Character.getNumericValue(lombrigas[l].charAt(5)); 
 	      
@@ -22,8 +22,8 @@ public class AppLombriga {
 	      
 	      Animacao passos = new Animacao(passosStr);
 		  
-		  tk.gravaPasso("=====");
-		  tk.gravaPasso(passos.apresenta(aquarioLombriga));
+	      tk.gravaPasso("=====");
+	      tk.gravaPasso(passos.apresenta(aquarioLombriga));
 		  
 	      for(int i = 0; i < lombrigas[l].length() - 6; i++) {
 	    	  passos.passo(aquarioLombriga);
