@@ -23,7 +23,7 @@ public class AquarioLombriga {
 	
 	public void crescer() {
 		if(tamAquario > tamLombriga) 
-			if(orientacao == 1) { //virada para esuqerda
+			if(orientacao == 1) { //virada para esquerda
 				if((pCabeca + tamLombriga) <= tamAquario ) //verificando se nao vai crescer para fora do aquario
 					tamLombriga += 1;
 			} else { //virada para direita
@@ -63,7 +63,7 @@ public class AquarioLombriga {
 		if(orientacao == 1) {
 			for(i = 1; i <= tamAquario; i++) {
 				if(i == pCabeca) {
-					apresentaStr += "0";
+					apresentaStr += "O";
 					for(j = 1; j < tamLombriga; j++) {
 						apresentaStr += "@";
 						i++;
@@ -76,7 +76,7 @@ public class AquarioLombriga {
 			String apresentaStr1 = "";
 			for(i = tamAquario; i > 0; i--) {
 				if(i == pCabeca) {
-					apresentaStr1 += "0";
+					apresentaStr1 += "O";
 					for(j = 1; j < tamLombriga; j++) {
 						apresentaStr1 += "@";
 						i--;
