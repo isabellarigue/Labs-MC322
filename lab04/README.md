@@ -2,5 +2,5 @@
 
 ## Resolução da tarefa
 
-[Diretório com os arquivos .java](src\pt\c02oo\s03relacionamento\s04restaum)
+[Diretório com os arquivos .java](src/pt/c02oo/s03relacionamento/s04restaum)
 
