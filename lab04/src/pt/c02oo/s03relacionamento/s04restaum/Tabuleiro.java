@@ -8,12 +8,12 @@ public class Tabuleiro {
 		this.tabuleiro = new Peca[7][7];
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 7; j++) {
-            	if(i == 3 && j == 3)
-            		this.tabuleiro[i][j] = new Peca(i, j, false); //posicao do meio que comeca sem peca 
-            	else if (posicaoValida(i, j))
-            		this.tabuleiro[i][j] = new Peca(i, j, true); //posicao onde tem peca
-            	else
-            		this.tabuleiro[i][j] = null; //posicao fora do tabuleiro
+				if(i == 3 && j == 3)
+					this.tabuleiro[i][j] = new Peca(i, j, false); //posicao do meio que comeca sem peca 
+				else if (posicaoValida(i, j))
+					this.tabuleiro[i][j] = new Peca(i, j, true); //posicao onde tem peca
+				else
+					this.tabuleiro[i][j] = null; //posicao fora do tabuleiro
 			}
 		}
 		this.board = board;
@@ -25,11 +25,9 @@ public class Tabuleiro {
 
 	public boolean posicaoValida(int linha, int coluna) { 
 		/* retorna verdadeiro se for uma posicao do tabuleiro */
-		if(((coluna >= 2 && coluna <= 4) && (linha >= 0 && linha <= 6)) || ((coluna >= 0 && coluna <= 6) && (linha >= 2 && linha <= 4))){
-				return true;
-		} else {
-				return false;
-		}
+		if(((coluna >= 2 && coluna <= 4) && (linha >= 0 && linha <= 6)) || ((coluna >= 0 && coluna <= 6) && (linha >= 2 && linha <= 4)))
+			return true;
+		return false;
 	}
 	
 	public void conectaPeca(Tabuleiro tabuleiroJogo) { 
@@ -65,7 +63,7 @@ public class Tabuleiro {
 	}
 	
 	public void tirarPeca(int linha, int coluna) {
-	/* se a peca avisar que comeu outra peca, entao o tabuleiro retira essa peca comida (tabuleiro[linha][coluna]) */
+		/* se a peca avisar que comeu outra peca, entao o tabuleiro retira essa peca comida (tabuleiro[linha][coluna]) */
 		mudarExistencia(linha, coluna);
 	}
 }
