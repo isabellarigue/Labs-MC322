@@ -21,30 +21,31 @@ public class Peca {
 	}
 	
 	public void conecta(Tabuleiro saida) {
-		      this.tabuleiroConecta = saida;
+		this.tabuleiroConecta = saida;
 	}
 
-	public boolean verificarCaminho(int novaLinha, int novaColuna) { //verifica se o caminho esta livre para a peca se movimentar
-		if((! tabuleiroConecta.verificarExistencia(novaLinha, novaColuna)) && (tabuleiroConecta.posicaoValida(novaLinha, novaColuna))) { //vendo se ha uma peca onde ela deseja ir e se esta dentro do tabuleiro
-			//devo falar que movimentos na diagonal sao invalidos? tera esse tipo de entrada?
-			if(novaLinha == posLinha + 2) {//movimenta para baixo
+	public boolean verificarCaminho(int novaLinha, int novaColuna) { 
+		/* verifica se o caminho para a peca ir na posicao pretendida (novaLinha e novaColuna) eh valido */
+		//primeiramente, verifica-se se o lugar pretendido esta vazio e se eh uma posicao do tabuleiro:
+		if((! tabuleiroConecta.verificarExistencia(novaLinha, novaColuna)) && (tabuleiroConecta.posicaoValida(novaLinha, novaColuna))) { 
+			if((novaLinha == posLinha + 2) && (novaColuna == posColuna)) {//movimenta para baixo
 				if(tabuleiroConecta.verificarExistencia(novaLinha - 1, novaColuna)) { //vendo se tem uma peca a ser comida
-					tabuleiroConecta.tirarPeca(novaLinha - 1, novaColuna); //puxar essas coisas pra fora
+					tabuleiroConecta.tirarPeca(novaLinha - 1, novaColuna); //avisando o tabuleiro para ele tirar a peca, ja que esta foi comida
 					return true;
 				}
-			} else if(novaLinha == posLinha - 2) { //movimenta para cima
-				if(tabuleiroConecta.verificarExistencia(novaLinha + 1, novaColuna)) {
-					tabuleiroConecta.tirarPeca(novaLinha + 1, novaColuna);
+			} else if((novaLinha == posLinha - 2) && (novaColuna == posColuna)){ //movimenta para cima
+				if(tabuleiroConecta.verificarExistencia(novaLinha + 1, novaColuna)) { //vendo se tem uma peca a ser comida
+					tabuleiroConecta.tirarPeca(novaLinha + 1, novaColuna); //avisando o tabuleiro para ele tirar a peca, ja que esta foi comida
 					return true;
 				}
-			} else if(novaColuna == posColuna + 2) { //movimenta para direita
+			} else if((novaColuna == posColuna + 2) && (novaLinha == posLinha)) { //movimenta para direita
 				if(tabuleiroConecta.verificarExistencia(novaLinha, novaColuna - 1)) { //vendo se tem uma peca a ser comida
-					tabuleiroConecta.tirarPeca(novaLinha, novaColuna - 1);
+					tabuleiroConecta.tirarPeca(novaLinha, novaColuna - 1); //avisando o tabuleiro para ele tirar a peca, ja que esta foi comida
 					return true;
 				}
-			} else if(novaColuna == posColuna - 2) { //movimenta para esquerda DEIXAR SO ELSE?
+			} else if((novaColuna == posColuna - 2) && (novaLinha == posLinha)) { //movimenta para esquerda 
 				if(tabuleiroConecta.verificarExistencia(novaLinha, novaColuna + 1)) { //vendo se tem uma peca a ser comida
-					tabuleiroConecta.tirarPeca(novaLinha, novaColuna + 1);
+					tabuleiroConecta.tirarPeca(novaLinha, novaColuna + 1); //avisando o tabuleiro para ele tirar a peca, ja que esta foi comida
 					return true;
 				}
 			}
@@ -53,12 +54,11 @@ public class Peca {
 	}
 	
 	public void movimentarPeca(int novaLinha, int novaColuna) {
-		if(verificarCaminho(novaLinha, novaColuna)) { //a peca vai mudar de lugar, ent na posicao antiga ela deixa de existir e na nova existe == true
-			tabuleiroConecta.mudarExistencia(posLinha, posColuna);
-			tabuleiroConecta.mudarExistencia(novaLinha, novaColuna);
+		/* verifica se eh possivel ir para a nova posicao pretendida, caso sim altera as condicoes de existencia na posicao antiga e na nova */
+		if(verificarCaminho(novaLinha, novaColuna)) { 
+			tabuleiroConecta.mudarExistencia(posLinha, posColuna); //a peca vai mudar de lugar, entao na posicao antiga ela deixa de existir 
+			tabuleiroConecta.mudarExistencia(novaLinha, novaColuna); //e na nova posicao ela passa a existir
 		}
 	}
-
-	
 
 }
