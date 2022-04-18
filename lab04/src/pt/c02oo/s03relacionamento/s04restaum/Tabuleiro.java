@@ -8,12 +8,13 @@ public class Tabuleiro {
 		this.tabuleiro = new Peca[7][7];
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 7; j++) {
-				if(i == 3 && j == 3)
-					this.tabuleiro[i][j] = new Peca(i, j, false); //posicao do meio que comeca sem peca 
-				else if (posicaoValida(i, j))
-					this.tabuleiro[i][j] = new Peca(i, j, true); //posicao onde tem peca
-				else
-					this.tabuleiro[i][j] = null; //posicao fora do tabuleiro
+            	if(i == 3 && j == 3) {
+            		this.tabuleiro[i][j] = new Peca(i, j, false); //posicao do meio que comeca sem peca 
+            	} else if (posicaoValida(i, j)) {
+            		this.tabuleiro[i][j] = new Peca(i, j, true); //posicao onde tem peca
+            	} else {
+            		this.tabuleiro[i][j] = null; //posicao fora do tabuleiro
+            	}
 			}
 		}
 		this.board = board;

@@ -7,7 +7,7 @@ public class AppRestaUm {
    }
    
    public static void executaJogo(String arquivoEntrada, String arquivoSaida) {
-	  int posLinha, posColuna, novaLinha, novaColuna;
+	 int posLinha, posColuna, novaLinha, novaColuna;
 	  
       Toolkit tk = Toolkit.start(arquivoEntrada, arquivoSaida);
       
